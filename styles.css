@@ -1,0 +1,55 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #004c97; /* HAVI blue */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a1a1a; /* HAVI dark gray */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #004c97; /* HAVI blue */
+    color: #fff;
+}
+
+.nav-tabs .nav-link {
+    color: #004c97; /* HAVI blue */
+}
+
+.nav-tabs .nav-link:hover {
+    color: #1a1a1a; /* HAVI dark gray */
+}
+
+.btn-primary {
+    background-color: #004c97; /* HAVI blue */
+    border-color: #004c97; /* HAVI blue */
+}
+
+.btn-primary:hover {
+    background-color: #003366; /* Darker HAVI blue */
+    border-color: #003366; /* Darker HAVI blue */
+}
+
+.list-group-item {
+    border: 1px solid #dcdcdc; /* Light gray */
+}
+
+.badge-success {
+    background-color: #7bb241; /* HAVI green */
+}
+
+.badge-warning {
+    background-color: #ffcc00; /* HAVI yellow */
+}
+
+.badge-danger {
+    background-color: #e74c3c; /* HAVI red */
+}
+
