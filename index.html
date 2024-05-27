@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Cybersecurity Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4 text-center">Retail Cybersecurity Dashboard</h1>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="rss-tab" data-toggle="tab" href="#rss" role="tab">RSS Feeds</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="manual-tab" data-toggle="tab" href="#manual" role="tab">MRC Entries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="alerts-tab" data-toggle="tab" href="#alerts" role="tab">Real-Time Threat Alerts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="admin-tab" data-toggle="tab" href="#admin" role="tab">Admin</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="rss" role="tabpanel">
+                <h2 class="mt-4">Retail Cybersecurity Risks</h2>
+                <button id="export-rss" class="btn btn-primary mb-3">Export to Excel</button>
+                <div class="form-group">
+                    <label for="severity-filter">Filter by Severity</label>
+                    <select class="form-control" id="severity-filter">
+                        <option value="all">All</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div id="rss-entries" class="list-group"></div>
+            </div>
+            <div class="tab-pane fade" id="manual" role="tabpanel">
+                <h2 class="mt-4">MRC Entries</h2>
+                <button id="export-mrc" class="btn btn-primary mb-3">Export to Excel</button>
+                <div id="mrc-entries" class="list-group"></div>
+            </div>
+            <div class="tab-pane fade" id="alerts" role="tabpanel">
+                <h2 class="mt-4">Real-Time Threat Alerts</h2>
+                <button id="export-alerts" class="btn btn-primary mb-3">Export to Excel</button>
+                <div id="alert-entries" class="list-group"></div>
+            </div>
+            <div class="tab-pane fade" id="admin" role="tabpanel">
+                <h2 class="mt-4">Admin Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div id="admin-content" class="mt-4" style="display:none;">
+                    <h2 class="mt-4">MRC Entries (Admin)</h2>
+                    <form id="entry-form" class="mb-4">
+                        <div class="form-group">
+                            <label for="manual-title">Title</label>
+                            <input type="text" class="form-control" id="manual-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manual-description">Description</label>
+                            <textarea class="form-control" id="manual-description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="manual-type">Type</label>
+                            <input type="text" class="form-control" id="manual-type" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manual-severity">Severity</label>
+                            <select class="form-control" id="manual-severity" required>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Risk</button>
+                    </form>
+                    <div id="admin-mrc-entries" class="list-group"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
